@@ -103,7 +103,7 @@ And the following:
 
 SAITAMA_IMG = "https://telegra.ph/file/12d5fc59648ce9f7e41d7.jpg"
 
-DONATE_STRING = ""No Don't."""
+DONATE_STRING = "".Don't Want"""
 
 IMPORTED = {}
 MIGRATEABLE = []
