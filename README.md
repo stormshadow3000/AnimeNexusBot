@@ -2,7 +2,7 @@
   <img src="https://telegra.ph/file/12d5fc59648ce9f7e41d7.jpg">
 </p>
 
-# Monkey D Luffy Robot 
+# Midoriya Deku
 
 <p align="center">
 - x -|│  “	Just some code who is a bot for fun. ”  │| - x -
