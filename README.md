@@ -10,7 +10,7 @@
 
 
 
-              "Luffy is based on ''''ONE PEICE''' anime"
+              "Midoriya is based on ''''Hero Acadmia''' anime"
 
 Luffy is a a simple bot for making your group management easier and cool.
 
