@@ -233,13 +233,13 @@ def start(update: Update, context: CallbackContext):
                             ),
                             InlineKeyboardButton(
                                 text="🔔 Updates Channel",
-                                url="https://t.me/MIDORIYA_SUPPORT",
+                                url="https://t.me/Midoriya_Updates",
                             ),
                         ],
                         [
                             InlineKeyboardButton(
                                 text="🧾 Getting started guide",
-                                url="https://t.me/Midoriya_Updates_29",
+                                url="https://t.me/Midoriya_Logs",
                             )
                         ],
                         [
