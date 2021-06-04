@@ -221,7 +221,7 @@ def start(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text="☑️ Add Midoriya to your group",
-                                url="t.me/{}?startgroup=true".format(
+                                url="t.me/Midoriya_X_Hero_bot?startgroup=true".format(
                                     context.bot.username
                                 ),
                             )
