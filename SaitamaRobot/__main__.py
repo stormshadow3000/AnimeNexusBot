@@ -11,7 +11,6 @@ from SaitamaRobot import (
     LOGGER,
     OWNER_ID,
     PORT,
-    SUPPORT_CHAT,
     TOKEN,
     URL,
     WEBHOOK,
@@ -20,8 +19,7 @@ from SaitamaRobot import (
     StartTime,
     telethn,
     updater,
-    pbot,
-)
+    pbot)
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
@@ -76,14 +74,12 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
 Hi {}, my name is {}! 
 I am an Anime themed group management bot.
-Build by weebs for weebs, I specialize in managing anime and similar themed groups And my 2nd bot @pirateking_robot
-
+I am specialize in managing anime, and similar themed groups And my 2nd bot @pirateking_robot
 """
 
 HELP_STRINGS = """
-Hey there! My name is *{}*.
-I'm No.1 Hero and i am here to help admins manage their groups with My Mysterious Power! Have a look at the following for an idea of some of \
-the things I can help you with.
+Hey there, I'm Deku!
+To make me functional, make sure that i have enough rights in your group.
 
 *Main* commands available:
  • /help: PM's you this message.
