@@ -7,7 +7,7 @@ import Midoriya_X_Hero_bot.modules.sql.chatbot_sql as sql
 from coffeehouse.api import API
 from coffeehouse.exception import CoffeeHouseError as CFError
 from coffeehouse.lydia import LydiaAI
-from Midoriya_X_Hero_bot import AI_API_KEY, OWNER_ID, SUPPORT_CHAT, dispatcher
+from Midoriya_X_Hero_bot.import AI_API_KEY, OWNER_ID, SUPPORT_CHAT, dispatcher
 from Midoriya_X_Hero_bot.modules.helper_funcs.chat_status import user_admin
 from Midoriya_X_Hero_bot.modules.helper_funcs.filters import CustomFilters
 from Midoriya_X_Hero_bot.modules.log_channel import gloggable
