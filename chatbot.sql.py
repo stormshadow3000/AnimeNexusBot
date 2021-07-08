@@ -1,6 +1,6 @@
 import threading
 
-from MidoriyaXHerobot.modules.sql import BASE, SESSION
+from SaitamaRobot.modules.sql import BASE, SESSION
 from sqlalchemy import Column, String
 
 
