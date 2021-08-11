@@ -73,16 +73,16 @@ def addsudo(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        message.reply_text("This member is already a Dragon Disaster")
+        message.reply_text("This Person is already a admin")
         return ""
 
     if user_id in DEMONS:
-        rt += "Requested HA to promote a Demon Disaster to Dragon."
+        rt += "Requested Nexus to promote a MOD to ADMIN."
         data["supports"].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        rt += "Requested HA to promote a Wolf Disaster to Dragon."
+        rt += "Requested Nexus to promote This Good Guy to ADMIN."
         data["whitelists"].remove(user_id)
         WOLVES.remove(user_id)
 
@@ -94,14 +94,14 @@ def addsudo(update: Update, context: CallbackContext) -> str:
 
     update.effective_message.reply_text(
         rt
-        + "\nSuccessfully set Disaster level of {} to Dragon!".format(
+        + "\nSuccessfully set level of {} to ADMIN!".format(
             user_member.first_name
         )
     )
 
     log_message = (
-        f"#SUDO\n"
-        f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+        f"#ADMIN\n"
+        f"<b>Superior:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
         f"<b>User:</b> {mention_html(user_member.id, html.escape(user_member.first_name))}"
     )
 
@@ -135,16 +135,16 @@ def addsupport(
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        rt += "Requested HA to demote this Dragon to Demon"
+        rt += "Requested Nexus to demote this ADMIN to MOD"
         data["sudos"].remove(user_id)
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        message.reply_text("This user is already a Demon Disaster.")
+        message.reply_text("This user is already a MOD.")
         return ""
 
     if user_id in WOLVES:
-        rt += "Requested HA to promote this Wolf Disaster to Demon"
+        rt += "Requested Nexus to promote this Good Guy to MOD"
         data["whitelists"].remove(user_id)
         WOLVES.remove(user_id)
 
@@ -159,8 +159,8 @@ def addsupport(
     )
 
     log_message = (
-        f"#SUPPORT\n"
-        f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+        f"#MOD\n"
+        f"<b>Superior:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
         f"<b>User:</b> {mention_html(user_member.id, html.escape(user_member.first_name))}"
     )
 
@@ -191,17 +191,17 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        rt += "This member is a Dragon Disaster, Demoting to Wolf."
+        rt += "This member is a ADMIN, Demoting to Good Guy cuz of lack of trust."
         data["sudos"].remove(user_id)
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        rt += "This user is already a Demon Disaster, Demoting to Wolf."
+        rt += "This user is already a MOD, Demoting to Good Guy cuz Lack of trust."
         data["supports"].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        message.reply_text("This user is already a Wolf Disaster.")
+        message.reply_text("This user is already a MOD.")
         return ""
 
     data["whitelists"].append(user_id)
@@ -211,12 +211,12 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + f"\nSuccessfully promoted {user_member.first_name} to a Wolf Disaster!"
+        rt + f"\nSuccessfully promoted {user_member.first_name} to Good Guy!"
     )
 
     log_message = (
-        f"#WHITELIST\n"
-        f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))} \n"
+        f"#GOODGUY\n"
+        f"<b>Superior:</b> {mention_html(user.id, html.escape(user.first_name))} \n"
         f"<b>User:</b> {mention_html(user_member.id, html.escape(user_member.first_name))}"
     )
 
@@ -247,22 +247,22 @@ def addtiger(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        rt += "This member is a Dragon Disaster, Demoting to Tiger."
+        rt += "This member is a ADMIN, Demoting to trustworthy member cuz of lack of trust."
         data["sudos"].remove(user_id)
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        rt += "This user is already a Demon Disaster, Demoting to Tiger."
+        rt += "This user is already a MOD, Demoting to trustworthy member cuz of lack of trust."
         data["supports"].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        rt += "This user is already a Wolf Disaster, Demoting to Tiger."
+        rt += "This user is already a Good Guy, Promoting to trustworthy members."
         data["whitelists"].remove(user_id)
         WOLVES.remove(user_id)
 
     if user_id in TIGERS:
-        message.reply_text("This user is already a Tiger.")
+        message.reply_text("This user is already a trustworthy guy.")
         return ""
 
     data["tigers"].append(user_id)
@@ -272,12 +272,12 @@ def addtiger(update: Update, context: CallbackContext) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + f"\nSuccessfully promoted {user_member.first_name} to a Tiger Disaster!"
+        rt + f"\nSuccessfully promoted {user_member.first_name} to trustworthy member!"
     )
 
     log_message = (
-        f"#TIGER\n"
-        f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))} \n"
+        f"#Trust\n"
+        f"<b>superior:</b> {mention_html(user.id, html.escape(user.first_name))} \n"
         f"<b>User:</b> {mention_html(user_member.id, html.escape(user_member.first_name))}"
     )
 
@@ -307,7 +307,7 @@ def removesudo(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        message.reply_text("Requested HA to demote this user to Civilian")
+        message.reply_text("Requested Nexus to demote this user to member")
         DRAGONS.remove(user_id)
         data["sudos"].remove(user_id)
 
@@ -315,8 +315,8 @@ def removesudo(update: Update, context: CallbackContext) -> str:
             json.dump(data, outfile, indent=4)
 
         log_message = (
-            f"#UNSUDO\n"
-            f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+            f"#UNADMINn"
+            f"<b>Superior:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
             f"<b>User:</b> {mention_html(user_member.id, html.escape(user_member.first_name))}"
         )
 
@@ -326,7 +326,7 @@ def removesudo(update: Update, context: CallbackContext) -> str:
         return log_message
 
     else:
-        message.reply_text("This user is not a Dragon Disaster!")
+        message.reply_text("This user is not a ADMIN!")
         return ""
 
 
@@ -369,7 +369,7 @@ def removesupport(update: Update, context: CallbackContext) -> str:
         return log_message
 
     else:
-        message.reply_text("This user is not a Demon level Disaster!")
+        message.reply_text("This user is not a MOD!")
         return ""
 
 
@@ -401,8 +401,8 @@ def removewhitelist(update: Update, context: CallbackContext) -> str:
             json.dump(data, outfile, indent=4)
 
         log_message = (
-            f"#UNWHITELIST\n"
-            f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+            f"#UNGOODGUY\n"
+            f"<b>Superior:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
             f"<b>User:</b> {mention_html(user_member.id, html.escape(user_member.first_name))}"
         )
 
@@ -411,7 +411,7 @@ def removewhitelist(update: Update, context: CallbackContext) -> str:
 
         return log_message
     else:
-        message.reply_text("This user is not a Wolf Disaster!")
+        message.reply_text("This user is not a  Good Guy!")
         return ""
 
 
@@ -443,8 +443,8 @@ def removetiger(update: Update, context: CallbackContext) -> str:
             json.dump(data, outfile, indent=4)
 
         log_message = (
-            f"#UNTIGER\n"
-            f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+            f"#UNTRUST\n"
+            f"<b>Superior:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
             f"<b>User:</b> {mention_html(user_member.id, html.escape(user_member.first_name))}"
         )
 
@@ -453,14 +453,14 @@ def removetiger(update: Update, context: CallbackContext) -> str:
 
         return log_message
     else:
-        message.reply_text("This user is not a Tiger Disaster!")
+        message.reply_text("This user is not a Trust worthy member!")
         return ""
 
 
 @run_async
 @whitelist_plus
 def whitelistlist(update: Update, context: CallbackContext):
-    reply = "<b>Known Wolf Disasters 🐺:</b>\n"
+    reply = "<b>Known Good Guys:</b>\n"
     m = update.effective_message.reply_text(
         "<code>Gathering intel..</code>", parse_mode=ParseMode.HTML
     )
@@ -479,7 +479,7 @@ def whitelistlist(update: Update, context: CallbackContext):
 @run_async
 @whitelist_plus
 def tigerlist(update: Update, context: CallbackContext):
-    reply = "<b>Known Tiger Disasters 🐯:</b>\n"
+    reply = "<b>Known Trust worthy Members:</b>\n"
     m = update.effective_message.reply_text(
         "<code>Gathering intel..</code>", parse_mode=ParseMode.HTML
     )
@@ -501,7 +501,7 @@ def supportlist(update: Update, context: CallbackContext):
     m = update.effective_message.reply_text(
         "<code>Gathering intel..</code>", parse_mode=ParseMode.HTML
     )
-    reply = "<b>Known Demon Disasters 👹:</b>\n"
+    reply = "<b>Known MODS:</b>\n"
     for each_user in DEMONS:
         user_id = int(each_user)
         try:
