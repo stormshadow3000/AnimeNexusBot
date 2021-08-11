@@ -55,9 +55,7 @@ def warn(
     user: User, chat: Chat, reason: str, message: Message, warner: User = None
 ) -> str:
     if is_user_admin(chat, user.id):
-         message.reply_text(
-              "Damn admins, They are too storng i cant warn 5them!"
-           )
+         # message.reply_text("Damn admins, They are too storng i cant warn 5them!")
         return
 
     if user.id in TIGERS:
