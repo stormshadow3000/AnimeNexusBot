@@ -73,12 +73,12 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 Hi {}, my name is {}! 
-I am an Anime themed group management bot.
-I am specialize in managing anime, and similar themed groups And my 2nd bot [Luffy](https://t.me/pirateking_robot?start)
+I am a [Nexus](https://t.me/Nexus_Network) group management bot.
+I am specialize in managing Groups specially nexus Groups
 """
 
 HELP_STRINGS = """
-Hey there, I'm Deku!
+Hey there, I'm Anime Nexus Bot!
 To make me functional, make sure that i have enough rights in your group.
 
 *Main* commands available:
@@ -97,7 +97,7 @@ And the following:
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.?\n",
 )
 
-SAITAMA_IMG = "https://telegra.ph/file/12d5fc59648ce9f7e41d7.jpg"
+SAITAMA_IMG = "https://telegra.ph/file/fa92ca5ae2a5710fe7039.jpg"
 
 DONATE_STRING = """Plant tree's, give them water thats your donation"""
 
@@ -216,38 +216,24 @@ def start(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="☑️ Add Midoriya to your group",
-                                url="t.me/Midoriya_X_Hero_bot?startgroup=true".format(
+                                text="☑️ Add Anime Nexus Bot",
+                                url="t.me/AnimeNexusBot?startgroup=true".format(
                                     context.bot.username
                                 ),
                             )
                         ],
+                     
                         [
                             InlineKeyboardButton(
-                                text="🚑 Support Group",
-                                url=f"https://t.me/DekuSupport",
-                            ),
-                            InlineKeyboardButton(
-                                text="🔔 Updates Channel",
-                                url="https://t.me/Midoriya_Updates",
-                            ),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="🧾 Getting started guide",
-                                url="https://t.me/Midoriya_Logs",
+                                text="Nexus Network",
+                                url="https://t.me/Nexus_Network",
                             )
                         ],
-                        [
-                            InlineKeyboardButton(
-                                text="🗄 Source code",
-                                url="https://github.com/Deepak4212/SaitamaRobot",
-                            )
-                        ],
+                        
                         [
                             InlineKeyboardButton(
                                 text="⚙️ Help and Commands ",
-                                url="https://t.me/Midoriya_X_Hero_bot?start=help",
+                                url="https://t.me/AnimeNexusBot?start=help",
                             ),
                         ],
                     ],
