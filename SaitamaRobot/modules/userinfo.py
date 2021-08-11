@@ -296,7 +296,7 @@ def info(update: Update, context: CallbackContext):
         text += "\n\nThis Person is one of Nexus Admin."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThis Person is one of NexusMODS."
+        text += "\n\nThis Person is one of Nexus MODS."
         disaster_level_present = True
     elif user.id in TIGERS:
         text += "\n\nThis user is one of trustworthy Member of Nexus."
