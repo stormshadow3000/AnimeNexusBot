@@ -55,7 +55,9 @@ def warn(
     user: User, chat: Chat, reason: str, message: Message, warner: User = None
 ) -> str:
     if is_user_admin(chat, user.id):
-        # message.reply_text("Damn admins, They are too far to be One Punched!")
+         message.reply_text(
+              "Damn admins, They are too storng i cant warn 5them!"
+           )
         return
 
     if user.id in TIGERS:
@@ -88,7 +90,7 @@ def warn(
         if soft_warn:  # punch
             chat.unban_member(user.id)
             reply = (
-                f"<code>❕</code><b>Punch Event</b>\n"
+                f"<code>❕</code><b>Kick Event</b>\n"
                 f"<code> </code><b>•  User:</b> {mention_html(user.id, user.first_name)}\n"
                 f"<code> </code><b>•  Count:</b> {limit}"
             )
