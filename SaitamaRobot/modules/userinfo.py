@@ -290,19 +290,19 @@ def info(update: Update, context: CallbackContext):
         text += "\n\nThis Person is my OWNER."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis Person is CO-OWNER Of [Nexus](https://t.me/Nexus_Network)."
+        text += "\n\nThis Person is CO-OWNER Of Nexus)."
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nThis Person is one of [Nexus](https://t.me/Nexus_Network) Admin."
+        text += "\n\nThis Person is one of Nexus Admin."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThis Person is one of [Nexus](https://t.me/Nexus_Network) MODS."
+        text += "\n\nThis Person is one of NexusMODS."
         disaster_level_present = True
     elif user.id in TIGERS:
-        text += "\n\nThis user is one of trustworthy Member of [Nexus](https://t.me/Nexus_Network)."
+        text += "\n\nThis user is one of trustworthy Member of Nexus."
         disaster_level_present = True
     elif user.id in WOLVES:
-        text += "\n\nThis User is one of Good guys in [Nexus](https://t.me/Nexus_Network)."
+        text += "\n\nThis User is one of Good guys in Nexus."
         disaster_level_present = True
 
     if disaster_level_present:
