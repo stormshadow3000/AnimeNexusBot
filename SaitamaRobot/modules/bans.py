@@ -268,7 +268,7 @@ def kick(update: Update, context: CallbackContext) -> str:
         # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
         bot.sendMessage(
             chat.id,
-            f"Kicked! {mention_html(member.user.id, html.escape(member.user.first_name))}.",
+            f"kicked! {mention_html(member.user.id, html.escape(member.user.first_name))}.",
             parse_mode=ParseMode.HTML,
         )
         log = (
@@ -399,14 +399,14 @@ def selfunban(context: CallbackContext, update: Update) -> str:
 
 
 __help__ = """
- • `/punchme`*:* punchs the user who issued the command
+ • `/kickme`*:* kicks the user who issued the command
 
 *Admins only:*
  • `/ban <userhandle>`*:* bans a user. (via handle, or reply)
  • `/sban <userhandle>`*:* Silently ban a user. Deletes command, Replied message and doesn't reply. (via handle, or reply)
  • `/tban <userhandle> x(m/h/d)`*:* bans a user for `x` time. (via handle, or reply). `m` = `minutes`, `h` = `hours`, `d` = `days`.
  • `/unban <userhandle>`*:* unbans a user. (via handle, or reply)
- • `/kick <userhandle>`*:* kicks  user out of the group, (via handle, or reply)
+ • `/kick <userhandle>`*:* kick user out of the group, (via handle, or reply)
 """
 
 BAN_HANDLER = CommandHandler(["ban", "sban"], ban)
@@ -418,7 +418,7 @@ PUNCHME_HANDLER = DisableAbleCommandHandler("kickme", kickme, filters=Filters.gr
 
 dispatcher.add_handler(BAN_HANDLER)
 dispatcher.add_handler(TEMPBAN_HANDLER)
-dispatcher.add_handler(PUNCH_HANDLER)
+dispatcher.add_handler(KICK_HANDLER)
 dispatcher.add_handler(UNBAN_HANDLER)
 dispatcher.add_handler(ROAR_HANDLER)
 dispatcher.add_handler(KICKME_HANDLER)
@@ -427,8 +427,8 @@ __mod_name__ = "Bans"
 __handlers__ = [
     BAN_HANDLER,
     TEMPBAN_HANDLER,
-    PUNCH_HANDLER,
+    KICK_HANDLER,
     UNBAN_HANDLER,
     ROAR_HANDLER,
-    PUNCHME_HANDLER,
+    KICKME_HANDLER,
 ]
